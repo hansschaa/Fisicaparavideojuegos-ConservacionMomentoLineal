@@ -20,11 +20,16 @@ namespace test3
 
             if (playerState == PlayerState.MOVING)
             {
-                //Apply friction
-                //base.velocity = Game1.frictionCoefficient * weigth * Game1.gravity * ;
-                //Apply Wind Acceleration
+                //Vector Aparente
                 velocity += new Vector2((float)(Game1.windArrow.strength * Math.Cos(Game1.windArrow.rotation)),
                                         (float)(Game1.windArrow.strength * Math.Sin(Game1.windArrow.rotation)));
+
+
+
+                float fuerzaArrastreX = (float) (.5f * Game1.gravity * Math.Pow(velocity.X, 2) * Math.PI * Math.Pow(Game1.ballRadius, 2) * .4f);
+                float fuerzaArrastreY = (float) (.5f * Game1.gravity * Math.Pow(velocity.Y, 2) * Math.PI * Math.Pow(Game1.ballRadius, 2) * .4f);
+
+
 
                 base.position += base.velocity;
             }

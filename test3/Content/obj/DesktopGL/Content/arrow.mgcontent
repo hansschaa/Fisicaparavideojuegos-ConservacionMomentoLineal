@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/usuario/Projects/test3/test3/Content/arrow.png</SourceFile>
+  <SourceFile>/Users/usuario/Desktop/test3/test3/Content/arrow.png</SourceFile>
   <SourceTime>2018-11-08T13:26:31-03:00</SourceTime>
-  <DestFile>/Users/usuario/Projects/test3/test3/Content/bin/DesktopGL/Content/arrow.xnb</DestFile>
-  <DestTime>2018-11-08T13:27:06.39394-03:00</DestTime>
+  <DestFile>/Users/usuario/Desktop/test3/test3/Content/bin/DesktopGL/Content/arrow.xnb</DestFile>
+  <DestTime>2018-11-09T01:24:04.718264-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T18:56:40-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

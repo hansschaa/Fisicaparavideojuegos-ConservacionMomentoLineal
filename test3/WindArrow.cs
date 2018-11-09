@@ -26,12 +26,12 @@ namespace test3
             base.rotation = (float)MyMath.GetRandomNumber(rnd, 0, 360);
             base.scaleFactor = MyMath.TreeRule(2, 0.002f, strength);
 
+
+            Console.WriteLine("");
             Console.WriteLine("***SetStrengthAndAngle***");
             Console.WriteLine("Rotation: " + base.rotation);
             Console.WriteLine("Strength: " + base.strength);
             Console.WriteLine("ScaleFactor: " + base.scaleFactor);
-
-
         }
 
         public void Update(GameTime gameTime)

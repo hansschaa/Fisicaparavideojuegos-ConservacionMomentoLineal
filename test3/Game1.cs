@@ -20,16 +20,17 @@ namespace test3.Desktop
         #region "Entities"
         public static PlayerBall playerBall;
         public static Ball enemyBall;
-        private static Ball targetBall;
+        public static Ball targetBall;
         public static MouseArrow mouseArrow;
         public static WindArrow windArrow;
         #endregion
 
+        //Parámetros en metros
         #region "Parameters"
-        public static int ballRadius =                 9;
-        public static int windowWidth =              900;
-        public static int windowHeigth =             450;
-        public static float frictionCoefficient =    0.5f;
+        public static float ballRadius =        0.03075f;
+        public static float windowWidth =             3f;
+        public static float windowHeigth =          1.5f;
+        public static float frictionCoefficient =   0.0001f;
         #endregion
 
 
@@ -49,8 +50,8 @@ namespace test3.Desktop
         {
             // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
-            graphics.PreferredBackBufferWidth = windowWidth;
-            graphics.PreferredBackBufferHeight = windowHeigth;
+            graphics.PreferredBackBufferWidth =(int) MyMath.MetersToPixel(windowWidth);
+            graphics.PreferredBackBufferHeight = (int) MyMath.MetersToPixel(windowHeigth);
             graphics.ApplyChanges();
 
             base.Initialize();
@@ -66,12 +67,16 @@ namespace test3.Desktop
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            playerBall = new PlayerBall(new Vector2(ballRadius*2,graphics.PreferredBackBufferHeight/2), 0, Vector2.Zero, Vector2.Zero, ballRadius,Color.White);
-            enemyBall = new Ball(new Vector2(graphics.PreferredBackBufferWidth/2, graphics.PreferredBackBufferHeight / 2), 0, Vector2.Zero, Vector2.Zero, ballRadius, Color.Yellow);
-            targetBall = new Ball(new Vector2(300, 400), 0, Vector2.Zero, Vector2.Zero, ballRadius, Color.Red);
-            mouseArrow = new MouseArrow(new Vector2(ballRadius * 4, graphics.PreferredBackBufferHeight / 2), 0,
+            playerBall = new PlayerBall(new Vector2(ballRadius*2,windowHeigth/2), 0, Vector2.Zero, Vector2.Zero, ballRadius,BallType.PLAYER,Color.White);
+
+            enemyBall = new Ball(new Vector2(windowWidth/2, windowHeigth/2), 0, Vector2.Zero, Vector2.Zero, ballRadius, BallType.ENEMY,Color.Yellow);
+
+            targetBall = new Ball(new Vector2(2, 1), 0, Vector2.Zero, Vector2.Zero, ballRadius, BallType.TARGET,Color.Red);
+
+            mouseArrow = new MouseArrow(new Vector2(ballRadius * 4, windowHeigth / 2), 0,
                                         Vector2.Zero, Vector2.Zero, Content.Load<Texture2D>("arrow"));
-            windArrow = new WindArrow(new Vector2(700, 400), 0,
+
+            windArrow = new WindArrow(new Vector2(1, 1.3f), 0,
                                        Vector2.Zero, Vector2.Zero, Content.Load<Texture2D>("arrow"));
 
             // TODO: use this.Content to load your game content here
@@ -97,13 +102,16 @@ namespace test3.Desktop
                 Exit();
 
             // TODO: Add your update logic here
+            if (playerBall.ballState == BallState.STATIC)
+                mouseArrow.Update();
+
+            windArrow.Update(gameTime);
             playerBall.Update();
             enemyBall.Update();
             targetBall.Update();
-            windArrow.Update(gameTime);
 
-            if (playerBall.playerState == PlayerState.STATIC)
-                mouseArrow.Update();
+
+
 
             base.Update(gameTime);
         }
@@ -124,8 +132,8 @@ namespace test3.Desktop
             targetBall.Draw(spriteBatch);
             windArrow.Draw(spriteBatch);
 
-            if (playerBall.playerState == PlayerState.STATIC)
-                mouseArrow.Draw(spriteBatch, Mouse.GetState().Position);
+            if (playerBall.ballState == BallState.STATIC)
+                mouseArrow.Draw(spriteBatch);
 
             spriteBatch.End();
 

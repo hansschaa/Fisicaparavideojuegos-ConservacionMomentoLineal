@@ -15,16 +15,14 @@ namespace test3
             SetStrengthAndAngle();
         }
 
-        public void Draw(SpriteBatch spriteBach)
-        {
-            spriteBach.Draw(base.texture, base.position, null, Color.White, base.rotation, origin, scaleFactor, SpriteEffects.None, 0);
-        }
+
 
         public void SetStrengthAndAngle()
         {
-            base.strength = (float) MyMath.GetRandomNumber(rnd, 0.001f, 0.002f);
+            base.strength = (float) MyMath.GetRandomNumber(rnd, 0.03f, 0.05f);
             base.rotation = (float)MyMath.GetRandomNumber(rnd, 0, 360);
-            base.scaleFactor = MyMath.TreeRule(2, 0.002f, strength);
+            base.scaleFactor = MyMath.TreeRule(1, 0.03f, strength);
+            //base.strength = .05f;
 
 
             Console.WriteLine("");

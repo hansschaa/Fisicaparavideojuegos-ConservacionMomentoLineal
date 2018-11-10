@@ -1,7 +1,7 @@
 ﻿using System;
 namespace test3
 {
-    public enum PlayerState
+    public enum BallState
     {
         STATIC, MOVING
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using test3.Desktop;
 
 namespace test3
 {
@@ -19,5 +20,17 @@ namespace test3
         {
             return (x * max) / a;
         }
+
+        public static float MetersToPixel(float meters)
+        {
+            return meters * 300;
+        }
+
+        public static bool IsBallCollided(Vector2 positionBall1 , Vector2 positionBall2)
+        {
+            return Math.Sqrt(Math.Pow(positionBall1.X - positionBall2.X, 2) + Math.Pow(positionBall1.Y - positionBall2.Y, 2)) <= Game1.ballRadius*2;
+        }
+
+
     }
 }

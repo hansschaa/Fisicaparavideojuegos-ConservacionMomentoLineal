@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{905B6B3B-33B1-49FB-B691-AE30F88CB4F5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="test3/WindArrow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="test3/BallType.cs">
     <Files>
-      <File FileName="test3/Game1.cs" Line="10" Column="1" />
+      <File FileName="test3/Game1.cs" Line="33" Column="59" />
       <File FileName="test3/GameObject.cs" Line="11" Column="31" />
-      <File FileName="test3/MouseArrow.cs" Line="65" Column="37" />
-      <File FileName="test3/WindArrow.cs" Line="28" Column="35" />
-      <File FileName="test3/Arrow.cs" Line="11" Column="30" />
-      <File FileName="test3/MyMath.cs" Line="15" Column="58" />
-      <File FileName="test3/Ball.cs" Line="20" Column="1" />
-      <File FileName="test3/PlayerBall.cs" Line="19" Column="18" />
+      <File FileName="test3/MouseArrow.cs" Line="69" Column="52" />
+      <File FileName="test3/Arrow.cs" Line="23" Column="24" />
+      <File FileName="test3/MyMath.cs" Line="31" Column="113" />
+      <File FileName="test3/Ball.cs" Line="54" Column="60" />
+      <File FileName="test3/PlayerBall.cs" Line="35" Column="103" />
+      <File FileName="test3/WindArrow.cs" Line="24" Column="55" />
+      <File FileName="test3/PlayerState.cs" Line="4" Column="21" />
+      <File FileName="test3/Program.cs" Line="17" Column="1" />
+      <File FileName="test3/BallType.cs" Line="6" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.test3.Desktop PreferredExecutionTarget="MonoDevelop.Default" />

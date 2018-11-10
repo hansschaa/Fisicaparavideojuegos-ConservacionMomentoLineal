@@ -55,6 +55,7 @@
     <Compile Include="Arrow.cs" />
     <Compile Include="OtherBall.cs" />
     <Compile Include="PlayerBall.cs" />
+    <Compile Include="BallType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

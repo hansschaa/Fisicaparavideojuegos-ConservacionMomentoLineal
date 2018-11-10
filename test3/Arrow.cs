@@ -18,5 +18,11 @@ namespace test3
             scaleFactor = 1;
             origin = new Vector2(0, texture.Height / 2);
         }
+
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(this.texture, new Vector2(MyMath.MetersToPixel(base.position.X), MyMath.MetersToPixel(base.position.Y)), null, Color.White, MathHelper.ToRadians(base.rotation), origin, scaleFactor, SpriteEffects.None, 0);
+        }
     }
 }
